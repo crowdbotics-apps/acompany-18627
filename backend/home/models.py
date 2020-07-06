@@ -42,4 +42,4 @@ class Actions(models.Model):
 
 class Company(models.Model):
     "Generated Model"
-    name = models.TextField(max_length=256,)
+    name = models.TextField()
