@@ -42,6 +42,10 @@ class Actions(models.Model):
 class Company(models.Model):
     "Generated Model"
     name = models.TextField()
-    actions = models.ManyToManyField(
-        "home.Actions", blank=True, related_name="company_actions",
+    actions = models.ForeignKey(
+        "home.Actions",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="company_actions",
     )
