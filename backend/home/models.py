@@ -37,15 +37,15 @@ class Actions(models.Model):
     "Generated Model"
     name = models.TextField()
     phone_number = models.TextField()
+    company = models.ForeignKey(
+        "home.Company",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="actions_company",
+    )
 
 
 class Company(models.Model):
     "Generated Model"
     name = models.TextField()
-    actions = models.ForeignKey(
-        "home.Actions",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        related_name="company_actions",
-    )
