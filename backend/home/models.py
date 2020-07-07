@@ -35,7 +35,6 @@ class HomePage(models.Model):
 
 class Actions(models.Model):
     "Generated Model"
-    company = models.ManyToManyField("home.Company", related_name="actions_company",)
     name = models.TextField()
     phone_number = models.TextField()
 
@@ -43,3 +42,6 @@ class Actions(models.Model):
 class Company(models.Model):
     "Generated Model"
     name = models.TextField()
+    actions = models.ManyToManyField(
+        "home.Actions", blank=True, related_name="company_actions",
+    )
